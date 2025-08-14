@@ -13,41 +13,41 @@ console.log(nuevoAlumnos);
 
 // Practica 2:
 
-let productos = [];
+let listaDeCompras = [];
 
-function escogerProducto(producto) {
-    if (productos.includes(producto)) {
+function agregarProducto(producto) {
+    if (listaDeCompras.includes(producto)) {
         console.log(`El producto ${producto} ya ha sido seleccionado.`);
     } else {
-        productos.push(producto);
+        listaDeCompras.push(producto);
         console.log(`Producto ${producto} agregado a la lista.`);
     }
 }
 
 function eliminarProducto(producto) {
-    if (productos.includes(producto)){
-        const index = productos.indexOf(producto);
-        productos.splice(index, 1);
+    if (listaDeCompras.includes(producto)){
+        const index = listaDeCompras.indexOf(producto);
+        listaDeCompras.splice(index, 1);
         console.log(`Producto ${producto} eliminado de la lista.`);
     }else{
         console.log(`El producto ${producto} no se encuentra en la lista.`);
     }
 }
 
-function mostrarProductos() {
-    if (productos.length === 0) {
+function mostrarLista() {
+    if (listaDeCompras.length === 0) {
         console.log("No hay productos seleccionados.");
     } else {
         console.log("Productos seleccionados:");
-        for (let i = 0; i < productos.length; i++) {
-            console.log(`- ${productos[i]}`);
+        for (let i = 0; i < listaDeCompras.length; i++) {
+            console.log(`- ${listaDeCompras[i]}`);
         }
     }
 }
 
-escogerProducto("Manzanas");
-escogerProducto("Bananas");
-escogerProducto("Naranjas");
-mostrarProductos();
+agregarProducto("Manzanas");
+agregarProducto("Bananas");
+agregarProducto("Naranjas");
+mostrarLista();
 eliminarProducto("Bananas");
-mostrarProductos();
+mostrarLista();
